@@ -20,7 +20,7 @@ class CustomUserManager(BaseUserManager):
             raise ValueError(_("Users must submit a first name"))
         if not last_name:
             raise ValueError(_("Users must submit a last name"))
-        if not email:
+        if email:
             email = self.normalize_email(email)
             self.email_validator(email)
         else:
@@ -38,8 +38,9 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault("is_superuser",False)
         user.save(using=self._db)
         return user
-    def create_superuser(self, username, first_name,last_name,email,password,**extra_fields):
 
+
+    def create_superuser(self, username, first_name,last_name,email,password,**extra_fields):
 
         extra_fields.setdefault("is_staff",True)
         extra_fields.setdefault("is_superuser",True)
