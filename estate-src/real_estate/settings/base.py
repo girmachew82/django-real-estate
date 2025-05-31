@@ -43,7 +43,7 @@ THIRD_PART_APPS = [
     "django_filters",
     "django_countries",
     "phonenumber_field",
-    "djoser",
+    'djoser',
     "rest_framework_simplejwt"
 ]
 LOCAL_APPS = [
