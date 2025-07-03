@@ -44,7 +44,8 @@ THIRD_PART_APPS = [
     "django_countries",
     "phonenumber_field",
     'djoser',
-    "rest_framework_simplejwt"
+    "rest_framework_simplejwt",
+    'django_extensions',
 ]
 LOCAL_APPS = [
     "apps.common",

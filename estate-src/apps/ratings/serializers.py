@@ -9,7 +9,7 @@ class RatingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Rating
-        exclude = ["update_at","pkid"]
+        exclude = ["updated_at","pkid"]
 
 
     def get_rater(self, obj):

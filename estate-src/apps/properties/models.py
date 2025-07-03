@@ -48,7 +48,7 @@ class Property(TimeStampedUUIDModel):
     tax = models.DecimalField(verbose_name=_("Property Tax"), max_digits=6, decimal_places=2, default=0.15, help_text="15% property tx charge")
     plot_area = models.DecimalField(verbose_name=_("Plot Area"), max_digits=8, decimal_places=2,default=0.0)
     total_floors = models.IntegerField(verbose_name=_("Number of Floors"), default=0)
-    bedooms=  models.IntegerField(verbose_name=_("Bedrooms"), default=1)
+    bedrooms=  models.IntegerField(verbose_name=_("Bedrooms"), default=1)
     bathrooms = models.DecimalField(verbose_name=_("Bathrooms"), max_digits=4, decimal_places=2, default=1.0)
     advert_type = models.CharField(verbose_name=_("Adver Type"), max_length=50, choices=AdvertType.choices, default=AdvertType.FOR_RENT)
     property_type = models.CharField(verbose_name=_("Property Type"), max_length=50, choices=PropertyType.choices, default=PropertyType.OTHER)
@@ -70,8 +70,8 @@ class Property(TimeStampedUUIDModel):
         verbose_name_plural ="Properties"  
     def save(self, *args,**kwargs):
         self.title =str.title(self.title)
-        self.description = str.description(self.description)
-        self.ref_code = "".join(random.choice(string.ascii_uppercase + string.digits, 20))
+        self.description = str.capitalize(self.description)
+        self.ref_code = "".join(random.choices(string.ascii_uppercase + string.digits, k=20))
         super(Property, self).save(*args,**kwargs)
 
     @property
