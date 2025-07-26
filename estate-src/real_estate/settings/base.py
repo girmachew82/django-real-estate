@@ -14,6 +14,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 
 import environ
+import logging
+import logging.config
+
+from django.utils.log import DEFAULT_LOGGING
+from datetime import timedelta
+
+
+
 
 env = environ.Env(DEBUG=(bool, False))
 
@@ -147,7 +155,6 @@ REST_FRAMEWORK ={
 
 } 
 
-from datetime import timedelta
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
@@ -181,10 +188,7 @@ DJOSER ={
 }
 
 
-import logging
-import logging.config
 
-from django.utils.log import DEFAULT_LOGGING
 
 logger = logging.getLogger(__name__)
 
@@ -230,3 +234,9 @@ logging.config.dictConfig({
     },
 
 })
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:8080"
+]
