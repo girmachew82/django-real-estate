@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 
 from pathlib import Path
+
 import environ
 
 env = environ.Env(DEBUG=(bool, False))
@@ -148,8 +149,6 @@ REST_FRAMEWORK ={
 
 from datetime import timedelta
 
-
-
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
@@ -183,7 +182,6 @@ DJOSER ={
 
 
 import logging
-
 import logging.config
 
 from django.utils.log import DEFAULT_LOGGING

@@ -4,8 +4,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 
 from apps.profiles.models import Profile
-from .models import Rating
 
+from .models import Rating
 
 User = get_user_model()
 

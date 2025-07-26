@@ -1,0 +1,14 @@
+[tool.black]
+extend-exclude = '''
+/(
+    env
+  | venv
+  | migrations
+  | \.git
+  | \.pytest_cache
+  | \.mypy_cache
+  | build
+  | dist
+  | site-packages
+)/
+'''
